@@ -2,13 +2,29 @@ import './App.css';
 import Box from './components/box';
 import { useState, useEffect } from 'react';
 import Login from './components/Login';
+import { readCookie } from './common/index';
+import { authCheck } from './utils/index';
+import AddUser from './components/addUser';
 
 function App() {
   const [user, setUser] = useState(''); //default value of Harry //created a state variable called user. they are like global variables 
   const [photos, setPhotos] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [cookie, setCookie] = useState();
 
-  useEffect(() => { fetchImages() }, []); //useEffect says i want to run this when the function is first run y default at the beginning
+  async function loginWithToken(cookie) {
+    const user = await authCheck(cookie);
+    setUser(user);
+    setLoggedIn(true)
+    setCookie(cookie);
+  }
+  useEffect(() => {
+    fetchImages()
+    let cookie = readCookie('jwt+token');
+    if (cookie !== false) {
+      loginWithToken(cookie)
+    }
+  }, []); //useEffect says i want to run this when the function is first run y default at the beginning
 
 
   // const myArray = [{ name: "Harry" }, { name: "George" },
@@ -23,6 +39,13 @@ function App() {
     console.log(photos)
   }
 
+  const logout = () => {
+    document.cookie = "jwt_token =; path=/; expires = Thu, 01 Jan 1970 00:00:01 GMT;";
+    setUser('');
+    setLoggedIn(false);
+  }
+
+
   // for (let index = 0; index < myArray.length; index++) {
   //   const element = myArray[index];
   //   console.log(element);
@@ -33,10 +56,12 @@ function App() {
     <div className="App">
 
       <Login setter={setUser} />
-      <h1>{user} is logged in</h1>
+      {{ loggedIn } && <button onClick={logout}>Logout</button>}
+      {{ loggedIn } ? <h1>{user} lunch time</h1> : <h1>logged out</h1>}
+      <br></br>
+      <AddUser setter={setUser} />
 
       <main>
-        <button onClick={(event) => setLoggedIn(!loggedIn)}>Login</button><br />
         {user ?
           photos.map((item, index) => {
             return (

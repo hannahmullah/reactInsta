@@ -10,16 +10,15 @@ const Login = ({ setter }) => {
 
     async function login(username, email, password, setter) {
         try {
-            const body = JSON.stringify({ username: "bill" })
             const response = await fetch('http://localhost:5001/login', {
                 method: "POST",
-                header: { "Content-Type": "application/json" },
-                // body: JSON.stringify({
-                //     username: "user12",
-                //     email: "user12@hotmail.com",
-                //     password: "password"
-                // })
-                body: body
+                mode: "cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password
+                })
             })
             console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
             const data = await response.json();
