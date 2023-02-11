@@ -1,33 +1,315 @@
+/* APP */
 .App {
-  max-width: 800px;
   margin: 0 auto;
   text-align: center;
-}
-
-
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+  background-color: #fafafa
 }
 
 main {
   padding: 20px;
 }
 
-.image-list {
-  list-style: none;
+/* --------------------------------------------------------------------- */
+/* LOG IN & SIGN IN */
+
+.loginmain,
+.signupContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+.formBox {
+  height: 380px;
+  width: 350px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.signup-box {
+  height: 430px;
+  width: 350px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  padding: 30px;
+}
+
+.boxOrder {
+  display: flex;
+  flex-direction: column;
+}
+
+.noAccContainer {
+  margin-top: 10px;
+  height: 50px;
+  width: 390px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.signuplink {
+  color: rgb(77, 181, 249);
+
+}
+
+.signuplink:hover {
+  color: #3f51b5;
+}
+
+.boxh1 {
+  margin-top: -10px;
+}
+
+.instaLogo {
+  background-color: #fff;
+  width: 175px;
+}
+
+.logIn,
+.signup {
+  width: 258px;
+  height: 36px;
+  margin: 5px;
+  border: 1px solid #dbdbdb;
+}
+
+.signinbtn,
+.signupbtn {
+  margin-top: 20px;
+  width: 262px;
+  height: 30px;
+  background-color: rgb(77, 181, 249);
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+}
+
+.signinbtn:hover,
+.signupbtn:hover {
+  background-color: #3f51b5;
+}
+
+
+
+/* ------------------------------------------------------------------------- */
+
+/* POST */
+.postContainer {
+  /* list-style: none; */
+  width: 610px;
+  border: 1px solid #dbdbdb;
+  margin-top: 25px;
+
+}
+
+.center,
+.commentBox {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.image-list li {
+.header {
+  height: 60px;
+  width: 600px;
+  border-bottom: 1px solid #dbdbdb;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.avatarImg {
+  min-height: 30px;
+  min-width: 30px;
+  margin: 10px;
+}
+
+.username {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.postImg {
+  width: 600px;
+  height: 600px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+
+.analytics {
+  width: 600px;
+  display: flex;
+  justify-items: flex-start;
+  margin: 10px;
+}
+
+.postLove {
+  width: 25px;
+  background-color: #dbdbdb;
+  margin-right: 10px;
+}
+
+.postComment {
+  width: 23px;
+  background-color: #dbdbdb;
+  margin-right: 10px;
+}
+
+.postShare {
+  width: 25px;
+  color: #dbdbdb;
+  margin-right: 10px;
+}
+
+.likes {
+  width: 600px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.commentBox {
+  margin-top: 10px;
+  height: 56px;
+  width: 595px;
+}
+
+/* ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* NAVBAR */
+
+.navContainer {
+  height: 55px;
+  background-color: #fff;
+  border-bottom: 2px solid #dbdbdb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navButton {
+  margin: 10px 10px 0 10px;
+  background-color: #fff;
+
+}
+
+.navButtonA {
+
+  margin: 1px 10px 10px 10px;
+}
+
+.instaLogoNav {
+  margin: 10px 0 0 10px;
+  width: 100px;
+}
+
+navButton:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.navSearch {
+  height: 30px;
+  width: 215px;
+  margin-top: 10px;
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+}
+
+.menu {
+  width: 100%;
+}
+
+.menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+}
+
+.menu-item .icon-button {
+  margin-right: 0.5rem;
+}
+
+
+.menu-item .icon-button:hover {
+  filter: none;
+}
+
+.menu-item:hover {
+  background-color: #525357;
+}
+
+.icon-right {
+  margin-left: auto;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 10px 20px;
+  width: 200px;
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: var(--speed) ease;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu ul li:hover a {
+  color: rgb(212, 33, 9);
+  cursor: pointer;
+}
+
+.dropdown-menu ul li:hover img {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* 
+.postList li {
   width: calc(33.33% - 40px);
   margin: 20px;
 }
 
-.image-list img {
+.postList img {
   width: 100%;
   height: auto;
 }
@@ -39,4 +321,5 @@ main {
 
 .image-info p {
   margin: 0;
-}
+} */
+/* --------------------------------------------------------------------- */
