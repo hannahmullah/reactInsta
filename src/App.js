@@ -35,9 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      {user ? <h1>{user} logged in</h1> : <h1>Logged out</h1>}
-      {user && <button onClick={logout}>Logout</button>}
+      <Navbar user={user} setUser={setUser} setLoggedIn={setLoggedIn} />
+
       <br></br>
 
       <main>

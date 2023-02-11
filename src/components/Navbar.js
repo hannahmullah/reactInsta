@@ -6,14 +6,18 @@ import inbox from './images/share.png'
 import explore from './images/explore.png'
 import likes from './images/love.png'
 import account from './images/account.jpg'
-import App from '../App';
 
-const Navbar = ({ logout }) => {
+const Navbar = (user, setUser, setLoggedIn) => {
 
-    const handleLogout = () => {
-        logout();
-    };
-    console.log(handleLogout, logout)
+
+    const logout = () => {
+        document.cookie = "jwt_token =; path=/; expires = Thu, 01 Jan 1970 00:00:01 GMT;";
+        setUser('');
+        setLoggedIn(false);
+    }
+
+
+    console.log(logout)
     return (
         <div>
             <div class="navContainer">
@@ -35,7 +39,10 @@ const Navbar = ({ logout }) => {
                     <ul>
 
                         <DropdownItem text={'logged in'} />
-                        <DropdownItem onClick={handleLogout} text={'Logout'} />
+                        <DropdownItem text={'Logout'} />
+
+                        {user ? <h1>{user} logged in</h1> : <h1>Logged out</h1>}
+                        {user && <button onClick={logout}>Logout</button>}
 
                     </ul>
                 </div>
