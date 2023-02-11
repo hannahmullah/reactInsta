@@ -35,22 +35,21 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar user={user} setUser={setUser} setLoggedIn={setLoggedIn} />
 
-      <br></br>
+      {/* <Navbar user={user} setUser={setUser} setLoggedIn={setLoggedIn} /> */}
+      {/* {user ? <h1>{user} logged in</h1> : <h1>Logged out</h1>} */}
+      {/* {user && <p>{user} logged in</p>}
+      {user && <a className='signuplink' onClick={logout} ><b>Log out</b></a>} */}
 
-      <main>
-        {user ?
-          <Post />
-          :
-          <Login setter={setUser} />
-        }
-      </main>
+
+      {user && <Navbar user={user} loggedIn={loggedIn} logout={logout} />}
+      {user ? <Post /> : <Login setter={setUser} />}
+
 
       {/* && is the equivalent of an IF statement, ? and : are the equivalent of an IF ELSE statement */}
       {/* <input onChange={(event) => setUser(event.target.value)} /> html event in as the input and we can then see what events will give me */}
 
-    </div>
+    </div >
 
   );
 }

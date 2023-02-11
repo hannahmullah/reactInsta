@@ -26,7 +26,6 @@ const Post = () => {
 
     return (
         <>
-            <Navbar />
             {photos.map((item, index) => {
                 return (
                     <div className='postContainer'>
