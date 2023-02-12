@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/reactInsta/static/css/main.edca849e.css",
+    "main.js": "/reactInsta/static/js/main.5d95143e.js",
+    "static/media/iphones.gif": "/reactInsta/static/media/iphones.b7469f0dc15bf28a9fe3.gif",
+    "static/media/instaPhone.png": "/reactInsta/static/media/instaPhone.3686ea841c61da4e3863.png",
+    "static/media/comment.png": "/reactInsta/static/media/comment.d3cd19299ce6e937ae40.png",
+    "static/media/love.png": "/reactInsta/static/media/love.ebbc02ba26e0083c7302.png",
+    "static/media/instagramLogo.png": "/reactInsta/static/media/instagramLogo.a1f3746002e162ea9129.png",
+    "static/media/avatar.png": "/reactInsta/static/media/avatar.5fedd64859d19a7179b8.png",
+    "static/media/account.jpg": "/reactInsta/static/media/account.e2acf6906f2c7ab8a635.jpg",
+    "index.html": "/reactInsta/index.html",
+    "main.edca849e.css.map": "/reactInsta/static/css/main.edca849e.css.map",
+    "main.5d95143e.js.map": "/reactInsta/static/js/main.5d95143e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.edca849e.css",
+    "static/js/main.5d95143e.js"
+  ]
+}
