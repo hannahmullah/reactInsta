@@ -8,13 +8,15 @@ import Navbar from './Navbar';
 
 const Post = () => {
     const [photos, setPhotos] = useState([]);
+    const [page, setPage] = useState(1);
+    const limit = 10;
 
     useEffect(() => {
         fetchImages()
     }, []);
 
     const fetchImages = async () => {
-        const response = await fetch('https://picsum.photos/v2/list');
+        const response = await fetch(`https://picsum.photos/v2/list?limit=${limit}&page=${page}`);
         console.log(response)
         const data = await response.json();
         console.log(data);
@@ -22,17 +24,15 @@ const Post = () => {
         console.log(photos)
     }
 
-
-
     return (
         <>
-            {photos.map((item, index) => {
+            {photos.slice(0, limit * page).map((item, index) => {
                 return (
                     <div className='postContainer'>
                         <div className='center'>
                             <div className='header'>
                                 <img className='avatarImg' src={avatar} />
-                                <h2 className='username'>{item.author}</h2>
+                                <h3 className='username'>{item.author}</h3>
                             </div>
 
                             <div className='postImg'>
@@ -55,9 +55,13 @@ const Post = () => {
                 )
             })
             }
+            {photos.length > limit * page && (
+                <div className='loadMoreBtn'>
+                    <button onClick={() => setPage(page + 1)}>Load More</button>
+                </div>
+            )}
         </>
     )
 }
 
 export default Post;
-

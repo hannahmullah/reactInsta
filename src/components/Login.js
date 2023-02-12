@@ -1,6 +1,7 @@
 import { useState } from 'react';
 // import login from '../utils';
 import instaPhone from './images/instaPhone.png';
+import iphones from './images/iphones.gif'
 import instagramLogo from './images/instagramLogo.png';
 import AddUser from './addUser';
 
@@ -48,7 +49,7 @@ const Login = ({ setter }) => {
         <>
             <div className='loginmain'>
                 <div className='instaPhone'>
-                    <img src={instaPhone} width='454px' />
+                    <img src={iphones} width='400px' />
                 </div>
 
                 <div className='boxOrder'>
@@ -58,9 +59,9 @@ const Login = ({ setter }) => {
 
                         <div>
                             <form className='signinform' onSubmit={submitHandler} > {/*(once weve submit it, were going to run a submit) */}
-                                <input className='logIn' onChange={(event) => setUsername(event.target.value)} placeholder='Username' />
-                                <input className='logIn' onChange={(event) => setEmail(event.target.value)} placeholder='Email Address' />
-                                <input className='logIn' onChange={(event) => setPassword(event.target.value)} placeholder='Password' />
+                                <input className='logIn' onChange={(event) => setEmail(event.target.value)} placeholder='type user12@hotmail.com' />
+                                <input className='logIn' onChange={(event) => setUsername(event.target.value)} placeholder='type user12' />
+                                <input className='logIn' onChange={(event) => setPassword(event.target.value)} placeholder='type password' />
                                 <button className='signinbtn' onClick={submitHandler}>Log in</button>
                             </form>
                         </div>
